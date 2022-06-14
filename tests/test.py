@@ -18,6 +18,9 @@ def test_nb_calc(benchmark):
 def test_nb_ng_calc(benchmark):
     result = benchmark(fast.nb_ng_calc_series, s)
 
+def test_nb_ng_par_calc(benchmark):
+    result = benchmark(fast.nb_ng_par_calc_series, s)
+
 def test_r_calc(benchmark):
     result = benchmark(fast.r_calc_series, s)
 

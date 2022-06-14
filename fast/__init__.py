@@ -35,6 +35,13 @@ def nb_ng_calc(x):
         val += math.exp(1 / i)
     return val
 
+@nb.jit(nopython=True, nogil=True, parallel=True)
+def nb_ng_par_calc(x):
+    val = 1
+    for i in range(1, x):
+        val += math.exp(1 / i)
+    return val
+
 def calc_series(s):
     return s.map(calc)
 
@@ -46,6 +53,9 @@ def nb_calc_series(s):
 
 def nb_ng_calc_series(s):
     return s.map(nb_ng_calc)
+
+def nb_ng_par_calc_series(s):
+    return s.map(nb_ng_par_calc)
 
 def r_calc_series(s):
     return s.map(rfast.r_calc)
