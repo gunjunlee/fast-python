@@ -17,7 +17,7 @@ def calc(x):
 
 def np_calc(x):
     val = 1
-    val = np.add.reduce(np.exp([i for i in range(1, x)]))
+    val = np.add.reduce(np.exp(1. / np.arange(1, x)))
 
     return val
 

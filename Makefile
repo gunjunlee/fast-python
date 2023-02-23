@@ -1,7 +1,7 @@
 test:
 	@bash -c "\
 		cd rfast; \
-		maturin develop --rustc-extra-args=\"-C target-cpu=native\" --release; \
+		maturin develop --release -- -C target-cpu=native; \
 		EXIT_CODE=$?; \
 		cd ..; \
 		echo \"code ${EXIT_CODE}\"; \
